@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 const API_HOST = environment.apiHost;
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +34,8 @@ export class ApiService {
   }
 
   get(endpoint): Promise<any> {
-    const url = `${API_HOST}${endpoint}`;
+      const url = `${API_HOST}${endpoint}`;
+
     const req = this.http.get(url, this.httpOptions).pipe(map(ApiService.extractData));
 
     return req
@@ -45,7 +47,8 @@ export class ApiService {
   }
 
   post(endpoint, data): Promise<any> {
-    const url = `${API_HOST}${endpoint}`;
+      const url = `${API_HOST}${endpoint}`;
+
     return this.http.post<HttpEvent<any>>(url, data, this.httpOptions)
             .toPromise()
             .catch((e) => {
