@@ -14,12 +14,12 @@ script:
   ## Tagging
   - docker tag udagram-api-feed revir216/udagram-api-feed
   - docker tag udagram-api-user revir216/udagram-api-user
-  - docker tag udagram-frontend revir216/udagram-frontend
-  - docker tag reverseproxy revir216/reverseproxy
+  - docker tag udagram-frontend revir216/udagram-frontend:v2
+  - docker tag reverseproxy revir216/reverseproxy:v2
   ## Push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin docker.io
   - docker push revir216/udagram-api-feed
   - docker push revir216/udagram-api-user
-  - docker push revir216/udagram-frontend
-  - docker push revir216/reverseproxy
+  - docker push revir216/udagram-frontend:v2
+  - docker push revir216/reverseproxy:v2
 
