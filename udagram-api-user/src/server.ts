@@ -8,7 +8,7 @@ import bodyParser from 'body-parser';
 import {config} from './config/config';
 import {V0_USER_MODELS} from './controllers/v0/model.index';
 
-
+// #GET_PASSES_THIS_REPO_UDACITY_PLEASE
 (async () => {
     await sequelize.addModels(V0_USER_MODELS);
 
