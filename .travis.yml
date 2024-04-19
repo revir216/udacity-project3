@@ -17,10 +17,9 @@ script:
   - docker tag udagram-frontend revir216/udagram-frontend
   - docker tag reverseproxy revir216/reverseproxy
   ## Push
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
-  - docker push revir216/udagram-api-feed:latest
-  - docker push revir216/udagram-api-user:latest
-  - docker push revir216/udagram-frontend:latest
-  - docker push revir216/reverseproxy:latest
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker login -u "$DOCKER_USERNAME" --password-stdin docker.io
+  - docker push revir216/udagram-api-feed
+  - docker push revir216/udagram-api-user
+  - docker push revir216/udagram-frontend
+  - docker push revir216/reverseproxy
+
